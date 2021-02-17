@@ -1,4 +1,5 @@
 function consultaCep(){
+    $(".barra-progresso").show();
     var cep = document.getElementById("cep").value;
     var url = "https://viacep.com.br/ws/" + cep + "/json/";
         console.log(url);
@@ -7,9 +8,15 @@ function consultaCep(){
         type: "GET",
         success: function(response){
                console.log(response);
-           // não deu certo
+           
             $("#logradouro").html(response.logradouro);
             $("#bairro").html(response.bairro);
+            $("#localidade").html(response.localidade);
+            $("#uf").html(response.uf);
+            $("#numeroCep").html("CEP " + response.cep);
+            $(".cep").show();
+            $(".barra-progresso").hide();
+            /*$("#bairro").html(response.bairro);
             $("#localidade").html(response.localidade);
             $("#uf").html(response.uf);
             /*codigo aqui em baixo, só que mais menor de bom c:
@@ -23,3 +30,7 @@ function consultaCep(){
 
     })
 }
+$(function(){
+    $(".cep").hide();
+    $(".barra-progresso").hide();
+});
