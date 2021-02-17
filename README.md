@@ -1,2 +1,2 @@
 # aula_JQuery.Ajax
-Introdução  ao conjunto de técnicas Aja e a biblioteca JQuery
+Introdução  ao conjunto de técnicas Ajax e a biblioteca JQuery
